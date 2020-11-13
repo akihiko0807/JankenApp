@@ -1,0 +1,480 @@
+/* ここから下に記載していく */
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: 'Playfair Display', serif, 'Noto Sans JP', sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.6875;
+  color: #222222;
+  overflow: hidden;
+}
+main{
+  background-color: rgb(0, 0, 173);
+}
+img{
+  width: 100%;
+  height: auto;
+  /* vertical-align: bottom; */
+}
+a {
+  text-decoration: none;
+  display: inline-block;
+  color: #222222;
+}
+a:hover {
+  opacity: .7;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+.yellow-btn:hover {
+  opacity: .7;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+.flex-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.flex-reverse {
+  flex-direction: row-reverse;
+}
+dl, dt, dd {
+  margin: 0;
+  padding: 0;
+}
+.section-wrapper {
+  margin: 20px auto;
+}
+.section-title-wrapper {
+  text-align: center;
+}
+.blue-bg{
+  background-color: rgb(0, 0, 173);
+}
+
+/* タイトルヘッダー */
+header{
+  height: 50px;
+}
+.life-logo-wrapper {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.life-wrapper{
+  background-color: red;
+  width: calc((100% - 50px) / 2);
+  border: 5px solid gray;
+  box-sizing: border-box;
+  border-radius: 2px;
+  height: 50px;
+}
+.life-wrapper.hide{
+  opacity: 0;
+}
+.life{
+  height: 40px;
+  background-color: yellow;
+  z-index: 1;
+}
+.your-life{
+  width: 0;
+  transition-duration:1s;
+}
+.enemy-life{
+  margin: 0 0 0 auto;
+  width: 0;
+  transition-duration:1s;
+}
+.gslogo-wrapper{
+  height: 50px;
+  width: 50px;
+  opacity: 0;
+}
+.gslogo-wrapper > img{
+  border-radius: 50%;
+}
+
+/* 準備する場所 */
+#prepare{
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  color: #ffa32b;
+  background-color: rgb(0, 0, 173);
+}
+.caution-wrapper{
+  width: 130px;
+  text-align: center;
+  margin-left: 25px;
+}
+.self-img-outer{
+  width: 250px;
+  height: 100%;
+  padding-top: 10px;
+  z-index: 502;
+  opacity: 0;
+}
+.vs-img-wrapper{
+  width: 20%;
+  z-index: 502;
+  opacity: 0;
+}
+.vs-img{
+  margin-top: 80px;
+}
+.vs-img.hide{
+  display: none;
+}
+.win-text{
+  margin-top: 80px;
+  font-size: 45px;
+}
+.win-text.hide{
+  display: none;
+}
+.lose-text{
+  margin-top: 80px;
+  font-size: 45px;
+}
+.lose-text.hide{
+  display: none;
+}
+.continue{
+  font-size: 20px;
+  cursor: pointer;
+}
+.continue.hide{
+  display: none;
+}
+.continue:hover{
+  color: #fafafa;
+}
+.character-select-wrapper{
+  width: 250px;
+  z-index: 502;
+}
+.character-img-outer{
+  padding-top: 10px;
+}
+#character-name{
+  margin-top: 8px;
+}
+
+/* ルーレット部分 */
+.roulette{
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+.roulette-img-wrapper > img{
+  display: none;
+}
+.btn-wrapper{
+  display: flex;
+  flex-direction: column;
+  padding-left: auto;
+}
+.roulette-start{
+  font-size: 30px;
+  color: #ffa32b;
+  height: 20%;
+  border: #444444;
+  cursor: pointer;
+  width: 120px;
+}
+.roulette-start:hover{
+  opacity: .6;
+}
+
+/* 最初のアンダーカバー */
+.under-area {
+  position: fixed;
+  top: 390px;
+  width: 100%;
+  left: 0;
+  height: 400px;
+  background-color: white;
+  font-size: 24px;
+  -webkit-transition: .6s;
+  transition: .6s;
+  z-index: 505;
+  overflow: hidden;
+}
+.under-area-right{
+  padding-top: 40px;
+}
+.under-area.hide{
+  top: 100vh;
+}
+.under-img-wrapper{
+  max-width: 600px;
+  padding-top: 50px;
+  display: flex;
+  margin: auto;
+}
+
+/* 遊ぶ場所 */
+#play-ground{
+  height: 400px;
+  background-color: rgb(0, 0, 173);
+}
+.battle-start-btn-wrapper{
+  text-align: center;
+  pointer-events: none;
+}
+#battle-start{
+  width: 100%;
+  height: 40px;
+  background-color: rgb(0, 0, 173);
+  border-radius: 10px;
+  font-size: 50px;
+  cursor: pointer;
+  color: #ffa32b;
+}
+#battle-start.hide{
+  display: none;
+}
+#battle-start:hover{
+  opacity: .7;
+}
+.janken-wrapper{
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+}
+.janken-wrapper.hide{
+  display: none;
+}
+.dealer{
+  width: 200px;
+  height: 200px;
+}
+.dealer-img{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+.dealer-img.hide{
+  display: none;
+}
+.dealer-and-btn{
+  height: 200px;
+  margin-top: 50px;
+}
+.jnkn-btn-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 200px;
+  height: 200px;
+}
+.jnkn-btn{
+  width: auto;
+  padding:0;
+  margin:0 auto;
+  background:none;
+  border:0;
+  font-size:0;
+  line-height:0;
+  overflow:visible;
+  cursor:pointer;
+}
+
+.jnkn-btn > img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.jnkn-btn:hover{
+  opacity: .7;
+}
+.jnkn-result-wrapper{
+  width: 200px;
+  text-align: center;
+}
+.jnkn-result-text{
+  font-weight: bold;
+  font-size: 30px;
+  color: crimson;
+  font-style: 'Playfair Display';
+}
+
+/* ーーーーーアタックエリアーーーー */
+.attack-area {
+  position: fixed;
+  top: 390px;
+  width: 400px;
+  left: -400px;
+  height: 400px;
+  background-color: black;
+  font-size: 24px;
+  -webkit-transition: .6s;
+  transition: .6s;
+  z-index: 500;
+}
+.attack-area.open {
+  left: 0px;
+}
+.attack-area-title{
+  text-align: center;
+  height: 50px;
+  color: crimson;
+}
+.answer-btn-wrapper{
+  width: 180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 60px 60px 60px;
+  grid-template-rows: 60px 60px 60px;
+}
+.answer-btn-wrapper > button {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+#up { 
+  background-color: blue;
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+}
+#left { 
+  background-color: green;
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+}
+#right {
+  background-color: red; 
+  grid-row: 2 / 3;
+  grid-column: 3 / 4;
+}
+#down {
+  background-color: yellow; 
+  grid-row: 3 / 4;
+  grid-column: 2 / 3;
+}
+.rival-and-btn{
+  height: 200px;
+  margin-top: 50px;
+}
+.rival-img-wrapper{
+  width: 200px;
+}
+.rival-img{
+  border-radius: 50%;
+}
+.rival-img.hide{
+  opacity: 0;
+  transition: 5s;
+}
+.atk-result-text{
+  color: crimson;
+  text-align: center;
+}
+
+/* ーーーーディフェンエリアーーーー */
+.defense-area {
+  position: fixed;
+  top: 390px;
+  width: 400px;
+  right: -400px;
+  height: 400px;
+  background-color: black;
+  font-size: 24px;
+  -webkit-transition: .6s;
+  transition: .6s;
+  z-index: 500;
+}
+.defense-area.open {
+  right: 0px;
+}
+.defense-area-title{
+  text-align: center;
+  height: 50px;
+  color: crimson;
+}
+.finger-and-btn{
+  height: 200px;
+  margin-top: 50px;
+}
+.finger-img-wrapper{
+  width: 200px;
+}
+.finger-img{
+  border-radius: 50%;
+}
+.finger-img.hide{
+  opacity: 0;
+  transition: 5s;
+}
+
+.defense-btn-wrapper{
+  width: 180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 60px 60px 60px;
+  grid-template-rows: 60px 60px 60px;
+}
+.defense-btn-wrapper > button {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  border: none;
+  cursor: pointer;
+}
+#up-dfs { 
+  background-color: blue;
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+}
+#left-dfs { 
+  background-color: green;
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+}
+#right-dfs {
+  background-color: red;
+  grid-row: 2 / 3;
+  grid-column: 3 / 4;
+}
+#down-dfs {
+  background-color: yellow;
+  grid-row: 3 / 4;
+  grid-column: 2 / 3;
+}
+.dfs-result-wrapper{
+  width: 200px;
+}
+.dfs-result-text{
+  color: crimson;
+  text-align: center;
+}
+
+/* 最終結果関連 */
+.bglayer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: -100%;
+  left: 0;
+  display: block;
+  background-color: #000;
+  opacity: .9;
+  z-index: 501;
+  transition: .8s;
+  /* display: none; */
+}
+.bglayer.open {
+  top: 0;
+}

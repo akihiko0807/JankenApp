@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!-- 最初の設定は終わっています　必要な方は触ってください -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>G's Fighter2</title>
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&display=swap" rel="stylesheet">
+</head>
+<!-- 最初の設定は終わっています　必要な方は触ってください -->
+
+<body>
+  <!-- この中に記述していく -->
+  <!-- ここから下にコードを書く -->
+  
+  <main>
+    
+    <!-- ヒットポイントのバーを含むヘッダー部分 -->
+
+    <header>
+      <div class="life-logo-wrapper flex-box">
+        <div class="life-wrapper hide">
+          <div class="life your-life"></div>
+        </div>
+        <div class="gslogo-wrapper">
+          <img src="img/gslogo.jpg" alt="ジーズロゴ">
+        </div>
+        <div class="life-wrapper hide">
+          <div class="life enemy-life"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ヒットポイントのバーを含むヘッダー部分 -->
+
+    <!-- ゲームの準備をする場所 -->
+
+    <div class="blue-bg"> 
+      <section id="prepare" class="section-wrapper flex-box">
+        <!-- 遊び方解説部分 -->
+        <div class="caution-wrapper">
+          <p id="caution">Select<br>a<br>Difficulty</p>
+        </div>
+        <!-- /遊び方解説部分 -->
+
+        <!-- 自分の顔が映りつつ下にYOUって出てる場所 -->
+        <div class="self-img-outer">
+          <div class="self-view">
+            <video id="camera" width="200" height="200" autoplay playsinline muted></video>
+            <p class="player-name">YOU</p>
+          </div>
+        </div>
+        <!-- /自分の顔が映りつつ下にYOUって出てる場所 -->
+
+        <!-- VSのビジュアル部分 -->
+        <div class="vs-img-wrapper">
+          <img class="vs-img" src="img/st2vslogo.jpg" alt="vsマーク">
+          <p class="win-text hide">YOU WIN</p>
+          <p class="lose-text hide">YOU LOSE</p>
+          <p class="continue hide">CONTINUE?</p>
+          <audio id="continue-se" preload="auto">
+            <source src="se/continue.mp3" type="audio/mp3">
+          </audio>
+        </div>
+        <!-- /VSのビジュアル部分 -->
+
+        <!-- 敵キャラ選択部分 -->
+        <div class="character-select-wrapper">
+          <div class="character-img-outer">
+            <div class="roulette-wrapper">
+              <div class="roulette">
+                <div class="roulette-img-wrapper">
+                  <img class="roulette-img" src="img/MezamashikunFaceMain.jpg" alt="めざましくん">
+                  <img class="roulette-img" src="img/HikakinFaceMain.jpg" alt="ヒカキン">
+                  <img class="roulette-img" src="img/SazaeFaceMain.jpg" alt="サザエさん">
+                </div>
+              </div>
+            </div>
+            <p id="character-name" class="player-name"></p>
+            <!-- 関連音素材 -->
+            <audio id="mezamashivoice" preload="auto">
+              <source src="se/voiceofmezamashi.mp3" type="audio/mp3">
+            </audio>
+            <audio id="hikakinvoice" preload="auto">
+              <source src="se/voiceofhikakin.mp3" type="audio/mp3">
+            </audio>
+            <audio id="sazaevoice" preload="auto">
+              <source src="se/voiceofsazae.mp3" type="audio/mp3">
+            </audio>
+            <!-- /関連音素材 -->
+          </div>
+        </div>
+        <!-- /敵キャラ選択部分 -->
+
+        <!-- 難易度選択ボタン -->
+        <div class="btn-wrapper">
+          <div class="dificulty-btn">
+            <p class="roulette-start easy">easy<br>★</p>
+          </div>
+          <div class="dificulty-btn">
+            <p class="roulette-start normal">normal<br>★★</p>
+          </div>
+          <div class="dificulty-btn">
+            <p class="roulette-start hard">hard<br>★★★</p>
+          </div>
+        </div>
+        <!-- /難易度選択ボタン -->
+
+      </section>
+    </div>
+
+    <!-- /ゲームの準備をする場所 -->
+
+    <!-- 下半分のカバーの部分 -->
+    
+    <div class="under-area">
+      <div class="under-img-wrapper">
+        <div class="under-area-left">
+          <img src="img/g'sacademylogo.jpg" alt="ジーズロゴ">  
+        </div>
+        <div class="under-area-right">
+          <img src="img/streetfighterloge1.jpg" alt="fighterロゴ">
+        </div>
+      </div>
+    </div>
+
+    <!-- /下半分のカバーの部分 -->
+    
+    <!-- ゲームの操作をする場所 -->
+    <section id="play-ground" class="play-ground-wrapper">
+
+      <!-- ジャンケン部分 -->
+
+      <div class="janken-wrapper hide">
+        <div class="battle-start-btn-wrapper">
+          <p id="battle-start">BATTLE START</p>
+        </div>
+        <audio id="battle-bgm" preload="auto">
+          <source src="se/battlebgm.mp3" type="audio/mp3">
+        </audio>
+
+        <!-- 横並びにしたいディーラーとボタン -->
+
+        <div class="dealer-and-btn flex-box">
+          <div class="dealer">
+            <img class="dealer-img hide">
+          </div>
+          <div class="jnkn-btn-wrapper">
+            <button class="jnkn-btn gu"><img src="img/gu.jpg" alt="グーボタン"></button>
+            <button class="jnkn-btn choki"><img src="img/choki.jpg" alt="チョキボタン"></button>
+            <button class="jnkn-btn pa"><img src="img/pa.jpg" alt="パーボタン"></button>
+          </div>
+        </div>
+
+        <!-- /横並びにしたいディーラーとボタン -->
+        
+        <div class="jnkn-result-wrapper">
+          <p class="jnkn-result-text"></p>
+        </div>
+      </div>
+
+      <!-- /ジャンケン部分 -->
+      
+      <!-- アタック部分 -->
+
+      <div class="attack-area">
+        <div class="attack-area-title">
+          <h2>ATTACK</h2>
+        </div>
+        <!-- 横並びにしたい対戦相手とボタン -->
+        
+        <div class="rival-and-btn flex-box">
+          <div class="rival-img-wrapper">
+            <img class="rival-img">
+          </div>
+          <div class="answer-btn-wrapper">
+            <button id="up" class="atk-answer" name="answer" value="4"><i class="far fa-hand-point-up"></i></button>
+            <button id="left" class="atk-answer" name="answer" value="3"><i class="far fa-hand-point-left"></i></button>
+            <button id="right" class="atk-answer" name="answer" value="1"><i class="far fa-hand-point-right"></i></button>
+            <button id="down" class="atk-answer" name="answer" value="2"><i class="far fa-hand-point-down"></i></button>
+          </div>
+          <audio id="hit" preload="auto">
+            <source src="se/hit.mp3" type="audio/mp3">
+          </audio>
+          <audio id="miss" preload="auto">
+            <source src="se/miss.mp3" type="audio/mp3">
+          </audio>
+        </div>
+
+        <!-- /横並びにしたい対戦相手とボタン -->
+        
+        <div class="atk-result-wrapper">
+          <p class="atk-result-text"></p>
+        </div>
+      </div>
+      
+      <!-- /アタック部分 -->
+      
+      <!-- ディフェンス部分 -->
+      <div class="defense-area">
+        <div class="defense-area-title">
+          <h2>DEFENSE</h2>
+        </div>
+        <!-- 横並びにしたい対戦相手とボタン -->
+        <div class="finger-and-btn flex-box">
+          <div class="finger-img-wrapper">
+            <img class="finger-img" src="img/finger.jpg">
+          </div>
+          <div class="defense-btn-wrapper">
+            <button id="up-dfs" class="dfs-answer" name="answer" value="4"><i class="far fa-hand-point-up"></i></button>
+            <button id="left-dfs" class="dfs-answer" name="answer" value="3"><i class="far fa-hand-point-left"></i></button>
+            <button id="right-dfs" class="dfs-answer" name="answer" value="1"><i class="far fa-hand-point-right"></i></button>
+            <button id="down-dfs" class="dfs-answer" name="answer" value="2"><i class="far fa-hand-point-down"></i></button>
+          </div>
+        </div>
+        <audio id="uuwaa-se" preload="auto">
+          <source src="se/uuwaa.mp3" type="audio/mp3">
+        </audio>
+        <div class="dfs-result-wrapper">
+          <p class="dfs-result-text"></p>
+        </div>
+      </div>
+      <!-- /ディフェンス部分 -->
+      
+    </section>
+
+    <!-- /ゲームの操作をする場所 -->
+
+    <!-- 結果発表画面 -->
+
+    <section id="final-result">
+      <div class="bglayer"></div>
+      <audio id="youwin" preload="auto">
+        <source src="se/youwin.mp3" type="audio/mp3">
+      </audio>
+      <audio id="youlose" preload="auto">
+        <source src="se/youlose.mp3" type="audio/mp3">
+      </audio>
+    </section>
+
+    <!-- /結果発表画面 -->
+  </main>
+  <!-- ここから上にコードを書く -->
+  <!-- この中に記述していく -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+  <script src="js/roulette.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
