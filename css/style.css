@@ -1,5 +1,7 @@
 /* ここから下に記載していく */
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -7,16 +9,16 @@ html {
   font-size: 62.5%;
 }
 body {
-  font-family: 'Playfair Display', serif, 'Noto Sans JP', sans-serif;
+  font-family: "Playfair Display", serif, "Noto Sans JP", sans-serif;
   font-size: 1.6rem;
   line-height: 1.6875;
   color: #222222;
   overflow: hidden;
 }
-main{
+main {
   background-color: rgb(0, 0, 173);
 }
-img{
+img {
   width: 100%;
   height: auto;
   /* vertical-align: bottom; */
@@ -27,27 +29,29 @@ a {
   color: #222222;
 }
 a:hover {
-  opacity: .7;
-  -webkit-transition: .3s;
-  transition: .3s;
+  opacity: 0.7;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 .yellow-btn:hover {
-  opacity: .7;
-  -webkit-transition: .3s;
-  transition: .3s;
+  opacity: 0.7;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 .flex-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 .flex-reverse {
   flex-direction: row-reverse;
 }
-dl, dt, dd {
+dl,
+dt,
+dd {
   margin: 0;
   padding: 0;
 }
@@ -57,19 +61,19 @@ dl, dt, dd {
 .section-title-wrapper {
   text-align: center;
 }
-.blue-bg{
+.blue-bg {
   background-color: rgb(0, 0, 173);
 }
 
 /* タイトルヘッダー */
-header{
+header {
   height: 50px;
 }
 .life-logo-wrapper {
   margin-left: 20px;
   margin-right: 20px;
 }
-.life-wrapper{
+.life-wrapper {
   background-color: red;
   width: calc((100% - 50px) / 2);
   border: 5px solid gray;
@@ -77,113 +81,113 @@ header{
   border-radius: 2px;
   height: 50px;
 }
-.life-wrapper.hide{
+.life-wrapper.hide {
   opacity: 0;
 }
-.life{
+.life {
   height: 40px;
   background-color: yellow;
   z-index: 1;
 }
-.your-life{
+.your-life {
   width: 0;
-  transition-duration:1s;
+  transition-duration: 1s;
 }
-.enemy-life{
+.enemy-life {
   margin: 0 0 0 auto;
   width: 0;
-  transition-duration:1s;
+  transition-duration: 1s;
 }
-.gslogo-wrapper{
+.gslogo-wrapper {
   height: 50px;
   width: 50px;
   opacity: 0;
 }
-.gslogo-wrapper > img{
+.gslogo-wrapper > img {
   border-radius: 50%;
 }
 
 /* 準備する場所 */
-#prepare{
+#prepare {
   text-align: center;
   font-weight: bold;
   font-size: 30px;
   color: #ffa32b;
   background-color: rgb(0, 0, 173);
 }
-.caution-wrapper{
+.caution-wrapper {
   width: 130px;
   text-align: center;
   margin-left: 25px;
 }
-.self-img-outer{
+.self-img-outer {
   width: 250px;
   height: 100%;
   padding-top: 10px;
   z-index: 502;
   opacity: 0;
 }
-.vs-img-wrapper{
+.vs-img-wrapper {
   width: 20%;
   z-index: 502;
   opacity: 0;
 }
-.vs-img{
+.vs-img {
   margin-top: 80px;
 }
-.vs-img.hide{
+.vs-img.hide {
   display: none;
 }
-.win-text{
-  margin-top: 80px;
-  font-size: 45px;
-}
-.win-text.hide{
-  display: none;
-}
-.lose-text{
+.win-text {
   margin-top: 80px;
   font-size: 45px;
 }
-.lose-text.hide{
+.win-text.hide {
   display: none;
 }
-.continue{
+.lose-text {
+  margin-top: 80px;
+  font-size: 45px;
+}
+.lose-text.hide {
+  display: none;
+}
+.continue {
   font-size: 20px;
   cursor: pointer;
 }
-.continue.hide{
+.continue.hide {
   display: none;
 }
-.continue:hover{
+.continue:hover {
   color: #fafafa;
 }
-.character-select-wrapper{
+.character-select-wrapper {
   width: 250px;
   z-index: 502;
 }
-.character-img-outer{
+.character-img-outer {
   padding-top: 10px;
 }
-#character-name{
+#character-name {
   margin-top: 8px;
 }
 
 /* ルーレット部分 */
-.roulette{
+.roulette {
   width: 200px;
   height: 200px;
   margin: 0 auto;
 }
-.roulette-img-wrapper > img{
+.roulette-img-wrapper > img {
   display: none;
 }
-.btn-wrapper{
+.btn-wrapper {
   display: flex;
   flex-direction: column;
   padding-left: auto;
 }
-.roulette-start{
+.roulette-start {
   font-size: 30px;
   color: #ffa32b;
   height: 20%;
@@ -191,8 +195,8 @@ header{
   cursor: pointer;
   width: 120px;
 }
-.roulette-start:hover{
-  opacity: .6;
+.roulette-start:hover {
+  opacity: 0.6;
 }
 
 /* 最初のアンダーカバー */
@@ -204,18 +208,18 @@ header{
   height: 400px;
   background-color: white;
   font-size: 24px;
-  -webkit-transition: .6s;
-  transition: .6s;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
   z-index: 505;
   overflow: hidden;
 }
-.under-area-right{
+.under-area-right {
   padding-top: 40px;
 }
-.under-area.hide{
+.under-area.hide {
   top: 100vh;
 }
-.under-img-wrapper{
+.under-img-wrapper {
   max-width: 600px;
   padding-top: 50px;
   display: flex;
@@ -223,15 +227,15 @@ header{
 }
 
 /* 遊ぶ場所 */
-#play-ground{
+#play-ground {
   height: 400px;
   background-color: rgb(0, 0, 173);
 }
-.battle-start-btn-wrapper{
+.battle-start-btn-wrapper {
   text-align: center;
   pointer-events: none;
 }
-#battle-start{
+#battle-start {
   width: 100%;
   height: 40px;
   background-color: rgb(0, 0, 173);
@@ -240,72 +244,72 @@ header{
   cursor: pointer;
   color: #ffa32b;
 }
-#battle-start.hide{
+#battle-start.hide {
   display: none;
 }
-#battle-start:hover{
-  opacity: .7;
+#battle-start:hover {
+  opacity: 0.7;
 }
-.janken-wrapper{
+.janken-wrapper {
   width: 400px;
   height: 400px;
   margin: 0 auto;
 }
-.janken-wrapper.hide{
+.janken-wrapper.hide {
   display: none;
 }
-.dealer{
+.dealer {
   width: 200px;
   height: 200px;
 }
-.dealer-img{
+.dealer-img {
   width: 200px;
   height: 200px;
   border-radius: 50%;
 }
-.dealer-img.hide{
+.dealer-img.hide {
   display: none;
 }
-.dealer-and-btn{
+.dealer-and-btn {
   height: 200px;
   margin-top: 50px;
 }
-.jnkn-btn-wrapper{
+.jnkn-btn-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 200px;
   height: 200px;
 }
-.jnkn-btn{
+.jnkn-btn {
   width: auto;
-  padding:0;
-  margin:0 auto;
-  background:none;
-  border:0;
-  font-size:0;
-  line-height:0;
-  overflow:visible;
-  cursor:pointer;
+  padding: 0;
+  margin: 0 auto;
+  background: none;
+  border: 0;
+  font-size: 0;
+  line-height: 0;
+  overflow: visible;
+  cursor: pointer;
 }
 
-.jnkn-btn > img{
+.jnkn-btn > img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
 }
-.jnkn-btn:hover{
-  opacity: .7;
+.jnkn-btn:hover {
+  opacity: 0.7;
 }
-.jnkn-result-wrapper{
+.jnkn-result-wrapper {
   width: 200px;
   text-align: center;
 }
-.jnkn-result-text{
+.jnkn-result-text {
   font-weight: bold;
   font-size: 30px;
   color: crimson;
-  font-style: 'Playfair Display';
+  font-style: "Playfair Display";
 }
 
 /* ーーーーーアタックエリアーーーー */
@@ -317,19 +321,19 @@ header{
   height: 400px;
   background-color: black;
   font-size: 24px;
-  -webkit-transition: .6s;
-  transition: .6s;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
   z-index: 500;
 }
 .attack-area.open {
   left: 0px;
 }
-.attack-area-title{
+.attack-area-title {
   text-align: center;
   height: 50px;
   color: crimson;
 }
-.answer-btn-wrapper{
+.answer-btn-wrapper {
   width: 180px;
   margin: 0 auto;
   display: grid;
@@ -344,41 +348,41 @@ header{
   border: none;
   cursor: pointer;
 }
-#up { 
+#up {
   background-color: blue;
   grid-row: 1 / 2;
   grid-column: 2 / 3;
 }
-#left { 
+#left {
   background-color: green;
   grid-row: 2 / 3;
   grid-column: 1 / 2;
 }
 #right {
-  background-color: red; 
+  background-color: red;
   grid-row: 2 / 3;
   grid-column: 3 / 4;
 }
 #down {
-  background-color: yellow; 
+  background-color: yellow;
   grid-row: 3 / 4;
   grid-column: 2 / 3;
 }
-.rival-and-btn{
+.rival-and-btn {
   height: 200px;
   margin-top: 50px;
 }
-.rival-img-wrapper{
+.rival-img-wrapper {
   width: 200px;
 }
-.rival-img{
+.rival-img {
   border-radius: 50%;
 }
-.rival-img.hide{
+.rival-img.hide {
   opacity: 0;
   transition: 5s;
 }
-.atk-result-text{
+.atk-result-text {
   color: crimson;
   text-align: center;
 }
@@ -392,34 +396,34 @@ header{
   height: 400px;
   background-color: black;
   font-size: 24px;
-  -webkit-transition: .6s;
-  transition: .6s;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
   z-index: 500;
 }
 .defense-area.open {
   right: 0px;
 }
-.defense-area-title{
+.defense-area-title {
   text-align: center;
   height: 50px;
   color: crimson;
 }
-.finger-and-btn{
+.finger-and-btn {
   height: 200px;
   margin-top: 50px;
 }
-.finger-img-wrapper{
+.finger-img-wrapper {
   width: 200px;
 }
-.finger-img{
+.finger-img {
   border-radius: 50%;
 }
-.finger-img.hide{
+.finger-img.hide {
   opacity: 0;
   transition: 5s;
 }
 
-.defense-btn-wrapper{
+.defense-btn-wrapper {
   width: 180px;
   margin: 0 auto;
   display: grid;
@@ -433,12 +437,12 @@ header{
   border: none;
   cursor: pointer;
 }
-#up-dfs { 
+#up-dfs {
   background-color: blue;
   grid-row: 1 / 2;
   grid-column: 2 / 3;
 }
-#left-dfs { 
+#left-dfs {
   background-color: green;
   grid-row: 2 / 3;
   grid-column: 1 / 2;
@@ -453,10 +457,10 @@ header{
   grid-row: 3 / 4;
   grid-column: 2 / 3;
 }
-.dfs-result-wrapper{
+.dfs-result-wrapper {
   width: 200px;
 }
-.dfs-result-text{
+.dfs-result-text {
   color: crimson;
   text-align: center;
 }
@@ -470,9 +474,9 @@ header{
   left: 0;
   display: block;
   background-color: #000;
-  opacity: .9;
+  opacity: 0.9;
   z-index: 501;
-  transition: .8s;
+  transition: 0.8s;
   /* display: none; */
 }
 .bglayer.open {

@@ -1,19 +1,16 @@
-// jsを記述する際はここに記載していく
-var YOURLIFE = 100;
-var ENEMYLIFE = 100;
-var DIFFICULTY = ['easy', 'normal', 'hard']
-var MEZAMASHI = document.querySelector('#mezamashivoice');
-var HIKAKIN = document.querySelector('#hikakinvoice');
-var SAZAE = document.querySelector('#sazaevoice');
-var BATTLEBGM = document.querySelector('#battle-bgm');
-var HIT = document.querySelector('#hit');
-var MISS = document.querySelector('#miss');
-var YOUWINSOUND = document.querySelector('#youwin');
-var YOULOSESOUND = document.querySelector('#youlose');
-var CONTINUE = document.querySelector('#continue-se');
-var UUWAA = document.querySelector('#uuwaa-se');
-
-
+let YOURLIFE = 100;
+let ENEMYLIFE = 100;
+const DIFFICULTY = ['easy', 'normal', 'hard']
+const MEZAMASHI = document.querySelector('#mezamashivoice');
+const HIKAKIN = document.querySelector('#hikakinvoice');
+const SAZAE = document.querySelector('#sazaevoice');
+const BATTLEBGM = document.querySelector('#battle-bgm');
+const HIT = document.querySelector('#hit');
+const MISS = document.querySelector('#miss');
+const YOUWINSOUND = document.querySelector('#youwin');
+const YOULOSESOUND = document.querySelector('#youlose');
+const CONTINUE = document.querySelector('#continue-se');
+const UUWAA = document.querySelector('#uuwaa-se');
 
 function YOUWIN(){
   BATTLEBGM.pause();
@@ -37,7 +34,6 @@ function YOULOSE(){
   $(".under-area").removeClass("hide");
 }
 
-
 // キャラ選択ルーレット
 $(".roulette-start").on('click', function(){
   $(".under-area").addClass("hide");
@@ -49,8 +45,8 @@ $(".roulette-start").on('click', function(){
   $(".vs-img-wrapper").css('opacity', 1);
   $(".gslogo-wrapper").css('opacity', 1);
   $(".btn-wrapper").css('pointer-events', 'none');
-  
-  // initialize!
+
+
   if($(this).hasClass("easy")){
     $(".btn-wrapper").css('opacity', 0);
     var option = {
@@ -59,7 +55,7 @@ $(".roulette-start").on('click', function(){
       stopImageNumber : 0,
     }
     $('#character-name').delay(1700).queue(function(){
-      $(this).text("MEZAMASHI");  
+      $(this).text("MEZAMASHI");
       MEZAMASHI.play();
       $(".janken-wrapper").removeClass("hide");
       $("#battle-start").click();
@@ -103,7 +99,7 @@ $(".roulette-start").on('click', function(){
     // ハードクラスを追加する
     $(".rival-img").addClass('hard');
   }
-	$('div.roulette').roulette(option);	
+	$('div.roulette').roulette(option);
   $('div.roulette').roulette('start');
 });
 
@@ -111,7 +107,7 @@ $(".roulette-start").on('click', function(){
 
 
 /** カメラ設定 */
-const VIDEO = document.querySelector("#camera"); 
+const VIDEO = document.querySelector("#camera");
 
 const CONSTRAINTS = {    // constraintsの意味は「制約」
   audio: false,
@@ -139,7 +135,7 @@ function syncCamera(){
   });
 };
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーカメラつける
-syncCamera(); 
+syncCamera();
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーカメラつける
 
 // ーーーーーーーーーーージャンケンエリアーーーーーーーーーーー
@@ -156,7 +152,6 @@ function shuffleImage(){
     shuffleImage();
   }, 20);
 }
-
 
 $("#battle-start").on('click', function(){
   BATTLEBGM.play();
@@ -242,7 +237,7 @@ function ATKstart(){
   $(".rival-img").addClass("hide");
     if (r == 1){
       $(".rival-img").animate({zIndex:1},{
-        //2秒かけてアニメーション
+        //3秒かけてアニメーション
         duration:3000,
         //stepは、アニメーションが進むたびに呼ばれる
         step:function(now){
@@ -257,7 +252,7 @@ function ATKstart(){
           $(".rival-img").css('zIndex', 0);
         }
       })
-    } 
+    }
     if (r == 2){
       $(".rival-img").animate({zIndex:1},{
         //2秒かけてアニメーション
@@ -359,7 +354,7 @@ $(".atk-answer").click(function(){
         // もう一度じゃんけんをスタートさせる
         $("#battle-start").click();
         // correctクラスをremoveして
-        $(".atk-answer").removeClass("correct");  
+        $(".atk-answer").removeClass("correct");
         // アタックエリアを非表示にして（openクラスを取り除いて）
         $(".attack-area").delay(1000).queue(function(){
           $(this).removeClass("open");
@@ -373,7 +368,7 @@ $(".atk-answer").click(function(){
         // もう一度じゃんけんをスタートさせる
         $("#battle-start").click();
         // correctクラスをremoveして
-        $(".atk-answer").removeClass("correct");  
+        $(".atk-answer").removeClass("correct");
         // アタックエリアを非表示にして（openクラスを取り除いて）
         $(".attack-area").delay(1000).queue(function(){
           $(this).removeClass("open");
@@ -410,7 +405,7 @@ function DFSstart(){
           $(".finger-img").css('zIndex', 0);
         }
       })
-    } 
+    }
     if (dr == 2){
       $(".finger-img").animate({zIndex:1},{
         //2秒かけてアニメーション
@@ -513,7 +508,7 @@ $(".dfs-answer").click(function(){
       // もう一度じゃんけんをスタートさせる
       $("#battle-start").click();
       // correctクラスをremoveして
-      $(".dfs-answer").removeClass("correct");  
+      $(".dfs-answer").removeClass("correct");
       // アタックエリアを非表示にして（openクラスを取り除いて）
       $(".defense-area").delay(1000).queue(function(){
         $(this).removeClass("open");
@@ -527,7 +522,7 @@ $(".dfs-answer").click(function(){
         // もう一度じゃんけんをスタートさせる
         $("#battle-start").click();
         // correctクラスをremoveして
-        $(".dfs-answer").removeClass("correct");  
+        $(".dfs-answer").removeClass("correct");
         // アタックエリアを非表示にして（openクラスを取り除いて）
         $(".defense-area").delay(1000).queue(function(){
           $(this).removeClass("open");
